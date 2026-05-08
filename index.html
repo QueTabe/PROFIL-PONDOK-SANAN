@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Sanan | Asrama Perguruan Islam Salafiyah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --hijau: #0f6b3f;
+            --tosca: #40c9b8;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 107, 63, 0.75), rgba(15, 107, 63, 0.75)), url('https://source.unsplash.com/random/1920x1080/?islamic-school');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #40c9b8;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to right, #0f6b3f, #40c9b8);
+            bottom: -8px;
+            left: 20%;
+            border-radius: 9999px;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+    </style>
+</head>
+<body class="smooth-scroll font-sans bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-emerald-700 rounded-2xl flex items-center justify-center text-white text-3xl shadow-inner">
+                        <i class="fa-solid fa-mosque"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-emerald-800 tracking-tight">Pondok Sanan</h1>
+                        <p class="text-xs text-emerald-600 -mt-1">Asrama Perguruan Islam Salafiyah</p>
+                    </div>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#profil" class="nav-link text-gray-700 hover:text-emerald-700">Profil</a>
+                    <a href="#unit" class="nav-link text-gray-700 hover:text-emerald-700">Unit Pendidikan</a>
+                    <a href="#jenjang" class="nav-link text-gray-700 hover:text-emerald-700">Jenjang</a>
+                    <a href="#program" class="nav-link text-gray-700 hover:text-emerald-700">Program Unggulan</a>
+                    <a href="#daftar" class="nav-link text-gray-700 hover:text-emerald-700">Pendaftaran</a>
+                    <a href="#kontak" class="nav-link text-gray-700 hover:text-emerald-700">Kontak</a>
+                </div>
+
+                <button onclick="toggleMobileMenu()" 
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-2xl text-emerald-700">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t py-4">
+            <div class="flex flex-col px-6 gap-4 text-lg">
+                <a href="#profil" onclick="toggleMobileMenu()" class="py-2">Profil Pesantren</a>
+                <a href="#unit" onclick="toggleMobileMenu()" class="py-2">Unit Pendidikan</a>
+                <a href="#jenjang" onclick="toggleMobileMenu()" class="py-2">Jenjang Pendidikan</a>
+                <a href="#program" onclick="toggleMobileMenu()" class="py-2">Program Unggulan</a>
+                <a href="#daftar" onclick="toggleMobileMenu()" class="py-2">Syarat Pendaftaran</a>
+                <a href="#kontak" onclick="toggleMobileMenu()" class="py-2">Alamat & Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg h-screen flex items-center text-white relative">
+        <div class="max-w-7xl mx-auto px-6 text-center z-10">
+            <div data-aos="fade-up" class="max-w-3xl mx-auto">
+                <h2 class="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tighter">
+                    Selamat Datang di<br>
+                    <span class="text-[#40c9b8]">Pondok Pesantren Apis Sanan Gondang</span>
+                </h2>
+                <p class="text-xl md:text-2xl mb-10 text-emerald-100">
+                    Berilmu Kaffah Berakhlak Karimah, Siap Menjadi Generasi Rabbani yang Berkontribusi untuk Umat dan Bangsa
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="document.getElementById('daftar').scrollIntoView({behavior: 'smooth'})" 
+                            class="bg-[#40c9b8] hover:bg-teal-300 transition-all px-10 py-4 rounded-2xl text-lg font-semibold shadow-xl flex items-center justify-center gap-3 mx-auto sm:mx-0">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Daftar Sekarang
+                    </button>
+                    <button onclick="document.getElementById('profil').scrollIntoView({behavior: 'smooth'})" 
+                            class="border-2 border-white hover:bg-white hover:text-emerald-800 transition-all px-10 py-4 rounded-2xl text-lg font-semibold">
+                        Kenali Kami
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+            <p class="text-sm mb-2 opacity-75">Scroll untuk melihat lebih banyak</p>
+            <i class="fa-solid fa-chevron-down animate-bounce text-3xl"></i>
+        </div>
+    </header>
+
+    <!-- Profil -->
+    <section id="profil" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <img src="image/tugu-apis.JPG" 
+                         alt="Pondok Pesantren Apis Sanan Gondang" 
+                         class="rounded-3xl shadow-2xl w-full">
+                </div>
+                <div data-aos="fade-left">
+                    <span class="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">Berdiri sejak 1932</span>
+                    <p></p>
+                    <h2 class="text-5xl font-bold text-emerald-800 mb-6 section-title">Profil Pesantren</h2>
+                    <p class="text-lg leading-relaxed text-gray-600 mb-8">
+                        Pondok Pesantren <b>"APIS SANAN GONDANG"</b> adalah lembaga pendidikan Islam berbasis salaf yang didirikan oleh Maha Guru <b>Muhammad Djamhuri</b>, yang terkenal dengan nama <b>KH. SHODIQ DAMANHURI</b> atau juga KYAI SANAN, 
+                        Pada tahun 1932M Hadrotus Syaikh mendirikan Pesantren di Desa Gondang Kec. Gandusari Kab. Blitar yang terletak 18 km dari kota Blitar. Setelah beberapa tahun, perkembangan pesantren APIS Sanan Gondang menjadi sangat pesat. Para santri dari berbagai penjuru daerah telai mulai berdatangan untuk menimba ilmu. Sistem pengajaran yang sebelumnya hanya berbentuk bandongan atau weton dengan sejumlah kitab
+                        kuning, untuk tahap selanjutnya telah mulai menerapkan sistem madrasah. 
+                        Selanjutnya pesantren APIS Sanan Gondang terus mengadakan perbaikan dalam hal sistem pendidikan guna menggali warisan keilmuan dari para ulama salaf.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-emerald-700">1000+</div>
+                            <div class="text-sm text-gray-500">Santri Salaf + Cabang</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-emerald-700">40+</div>
+                            <div class="text-sm text-gray-500">Pengajar</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-emerald-700">90+</div>
+                            <div class="text-sm text-gray-500">Tahun</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unit Pendidikan -->
+    <section id="unit" class="py-24 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-emerald-800 mb-3 section-title mx-auto">Unit Pendidikan</h2>
+                <p class="text-gray-600 max-w-md mx-auto">Kami menyediakan pendidikan terintegrasi Baik Non-Formal (Salaf) maupun Formal</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-3xl overflow-hidden card-hover shadow-xl">
+                    <div class="h-60 bg-cover" style="background-image: url('image/ibt.JPG')"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Madrasah Ibtidaiyah</h3>
+                        <p class="text-gray-600">Pendidikan dasar untuk santri awam dan belum memiliki bekal keilmuan yang cukup.</p>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-3xl overflow-hidden card-hover shadow-xl">
+                    <div class="h-60 bg-cover" style="background-image: url('image/tsanawi.JPG')"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Madrasah Tsanawiyah</h3>
+                        <p class="text-gray-600">Jenjang dimana santri sudah serius dalam memahami ilmu mulai Alat, Fiqih, dan Aqidah.</p>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-3xl overflow-hidden card-hover shadow-xl">
+                    <div class="h-60 bg-cover" style="background-image: url('image/aliyah.JPG')"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Madrasah Aliyah</h3>
+                        <p class="text-gray-600">Jenjang dimana santri memahami Ilmu Alat, Fiqih, dan Aqidah secara Lanjut dan siap untuk terjun ke Masayarakat (PKL).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jenjang Pendidikan -->
+    <section id="jenjang" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-emerald-800 mb-3 section-title mx-auto">Jenjang Pendidikan</h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="bg-gradient-to-br from-emerald-700 to-teal-600 text-white px-10 py-8 rounded-3xl text-center w-72 card-hover">
+                    <div class="text-6xl mb-4">🕌</div>
+                    <h4 class="text-2xl font-bold">'Aliyah</h4>
+                    <p class="opacity-90">Setara SMA</p>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-600 to-teal-500 text-white px-10 py-8 rounded-3xl text-center w-72 card-hover">
+                    <div class="text-6xl mb-4">📖</div>
+                    <h4 class="text-2xl font-bold">Tsanawiyah</h4>
+                    <p class="opacity-90">Setara SMP</p>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-500 to-teal-400 text-white px-10 py-8 rounded-3xl text-center w-72 card-hover">
+                    <div class="text-6xl mb-4">🌱</div>
+                    <h4 class="text-2xl font-bold">Ibtidaiyah</h4>
+                    <p class="opacity-90">Setara MI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Unggulan -->
+    <section id="program" class="py-24 bg-emerald-800 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-3 section-title mx-auto text-white">Program Unggulan</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div data-aos="zoom-in" class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/20 card-hover">
+                    <i class="fa-solid fa-quran text-5xl text-[#40c9b8] mb-6"></i>
+                    <h4 class="text-2xl font-semibold mb-3">Tahfidz Al-Qur'an</h4>
+                    <p class="opacity-80">Program hafalan 30 juz dengan metode mutqin dan sanad (Khusus Santri Putri).</p>
+                </div>
+                <div data-aos="zoom-in" class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/20 card-hover">
+                    <i class="fa-solid fa-pen-nib text-5xl text-[#40c9b8] mb-6"></i>
+                    <h4 class="text-2xl font-semibold mb-3">Penguasaan Kitab Kuning / Kitab Ulama' Klasik</h4>
+                    <p class="opacity-80">Mulai dari Alat, Fiqih, Aqidah, dll.</p>
+                </div>
+                <div data-aos="zoom-in" class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/20 card-hover">
+                    <i class="fa-solid fa-users text-5xl text-[#40c9b8] mb-6"></i>
+                    <h4 class="text-2xl font-semibold mb-3">Diskusi Fiqih Ilmiyah</h4>
+                    <p class="opacity-80">Diskusi Fiqih Ilmiyah / Bahtsul Masa'il bagi santri 'Aliyah.</p>
+                </div>
+                <div data-aos="zoom-in" class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/20 card-hover">
+                    <i class="fa-solid fa-book text-5xl text-[#40c9b8] mb-6"></i>
+                    <h4 class="text-2xl font-semibold mb-3">Pembacaan Kitab Santri Senior</h4>
+                    <p class="opacity-80">Ihya' 'Ulumuddin,
+                        Shohih Muslim, Al - Hikam, Sirojut Tholibin, dan Kitab Klasik Lainnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Syarat Pendaftaran -->
+    <section id="daftar" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-5xl font-bold text-center mb-12 section-title">Syarat Pendaftaran</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-6 bg-emerald-50 p-6 rounded-3xl">
+                        <div class="w-10 h-10 bg-emerald-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0">1</div>
+                        <div>
+                            <h5 class="font-semibold text-xl">Diantar Wali / Wakilnya</h5>
+                            <p class="text-gray-600">Tidak boleh diantar oleh pacar / yang bukan mahrom / selain wali</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 bg-emerald-50 p-6 rounded-3xl">
+                        <div class="w-10 h-10 bg-emerald-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0">2</div>
+                        <div>
+                            <h5 class="font-semibold text-xl">Foto Diri 3x4</h5>
+                            <p class="text-gray-600">2 Lembar</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 bg-emerald-50 p-6 rounded-3xl">
+                        <div class="w-10 h-10 bg-emerald-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0">3</div>
+                        <div>
+                            <h5 class="font-semibold text-xl">Mengisi Formulir Pendaftaran</h5>
+                            <p class="text-gray-600">Yang disediakan oleh panitia</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 bg-emerald-50 p-6 rounded-3xl">
+                        <div class="w-10 h-10 bg-emerald-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0">4</div>
+                        <div>
+                            <h5 class="font-semibold text-xl">Membayar Uang Pangkal</h5>
+                            <p class="text-gray-600">Dilakukan ketika saat di Kantor Pendaftaran</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 bg-emerald-50 p-6 rounded-3xl">
+                        <div class="w-10 h-10 bg-emerald-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0">5</div>
+                        <div>
+                            <h5 class="font-semibold text-xl">Mengikuti Tes Masuk</h5>
+                            <p class="text-gray-600">Sesuai Tingkatan yang akan dimasuki</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 bg-emerald-50 p-6 rounded-3xl">
+                        <div class="w-10 h-10 bg-emerald-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0">6</div>
+                        <div>
+                            <h5 class="font-semibold text-xl">Mentaati Peraturan</h5>
+                            <p class="text-gray-600">Yang berlaku di Pondok Pesantren</p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="alert('Form pendaftaran akan segera dibuka. Hubungi admin untuk info lebih lanjut!')" 
+                        class="mt-12 w-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white py-6 rounded-3xl text-xl font-semibold shadow-xl hover:scale-105 transition-transform" href="#">
+                    Link Brosur PDF →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materi Ujian -->
+    <section class="py-24 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Materi Ujian Masuk</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <div class="bg-white p-10 rounded-3xl shadow">
+                    <h4 class="font-semibold text-xl mb-6 flex items-center gap-3"><i class="fa-solid fa-book text-emerald-600"></i> 1 Ibtida'iyah</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Tanpa Tes Masuk</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow">
+                    <h4 class="font-semibold text-xl mb-6 flex items-center gap-3"><i class="fa-solid fa-book text-emerald-600"></i> 2 Ibtida'iyah</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Membaca Kitab Mabadi' Fiqih Juz 1</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Membaca dan Menulis Surat-surat Pendek </li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Menulis Pegon</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow">
+                    <h4 class="font-semibold text-xl mb-6 flex items-center gap-3"><i class="fa-solid fa-book text-emerald-600"></i> 3 Ibtida'iyah</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Aqidatul Awam ( Aqo'id )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Syifa'ul Janan ( Tajwid )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Mabadi' Fiqih Juz 2</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Membaca Kitab Mabadi' Fiqih Juz 2 Kosongan</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow">
+                    <h4 class="font-semibold text-xl mb-6 flex items-center gap-3"><i class="fa-solid fa-book text-emerald-600"></i> 1 Tsanawiyah</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Khoridatul Bahiyah ( Aqoid )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Jurumiyah Jawa ( Nahwu )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Mabadi' Fiqih Juz 3 ( Fiqih )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Membaca Kitab Mabadi' Fiqih Juz 3 ( Fiqih ) Kosongan</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow">
+                    <h4 class="font-semibold text-xl mb-6 flex items-center gap-3"><i class="fa-solid fa-book text-emerald-600"></i> 2 Tsanawiyah</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Sanusiyah ( Aqoid )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Matan Al - Jurumiyah ( Nahwu )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Mabadi' Fiqih Juz 4 ( Fiqih )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Membaca Kitab Mabadi' Fiqih Juz 4 ( Fiqih ) Kosongan</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow">
+                    <h4 class="font-semibold text-xl mb-6 flex items-center gap-3"><i class="fa-solid fa-book text-emerald-600"></i> 3 Tsanawiyah</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Jawahirul Kalamiyah ( Aqoid )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Imrithi ( Nahwu )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Fathul Qorib Awal ( Fiqih )</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Membaca Kitab Fathul Qorib Awal ( Fiqih ) Kosongan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alamat & Kontak -->
+    <section id="kontak" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-5xl font-bold mb-8">Alamat & Kontak</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <i class="fa-solid fa-location-dot text-4xl text-emerald-600 mt-1"></i>
+                            <div>
+                                <p class="font-medium">Jl. Desa Gondang No.28, </p>
+                                <p class="text-gray-600">Gondang, Kec. Gandusari, Kabupaten Blitar, Jawa Timur 66187</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <i class="fa-solid fa-phone text-4xl text-emerald-600 mt-1"></i>
+                            <div>
+                                <p class="font-medium">+62 857-3610-6444</p>
+                                <p class="text-gray-600">Admin Pendaftaran</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <i class="fa-solid fa-hashtag text-4xl text-emerald-600 mt-1"></i>
+                            <div>
+                                <p class="font-medium">PONDOK SANAN</p>
+                                <p class="text-gray-600"><i>Instagram - Youtube - Tiktok - Facebook</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google Maps Placeholder -->
+                <div class="bg-gray-200 rounded-3xl h-96 flex items-center justify-center relative overflow-hidden">
+                    <a 
+                    href="https://maps.google.com/?q=Pondok+Pesantren+APIS+Sanan+Gondang"
+                    target="_blank"
+                    class="block w-full h-full">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.8216970821445!2d112.28411080000001!3d-8.0701812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7893070eb0ccd5%3A0x92d7fbda0bf25753!2sPondok%20Pesantren%20APIS%20Sanan%20Gondang%20Gandusari!5e1!3m2!1sid!2sid!4v1778253220051!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-8 rounded-3xl pointer-events-none" >
+                        <p class="text-white font-medium">📍 Lokasi Pondok Pesantren APIS Sanan Gondang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-900 text-emerald-100 py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center mb-8">
+                <div class="w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center text-5xl">
+                    🕌
+                </div>
+            </div>
+            <p class="text-2xl font-semibold mb-2">Pondok Pesantren APIS Sanan Gondang</p>
+            <p class="opacity-75">Gondang - Gandusari - Blitar</p>
+            
+            <div class="mt-12 pt-8 border-t border-white/20 text-sm opacity-70">
+                &copy; 2026 Pondok Pesantren APIS Sanan Gondang. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                document.querySelector('nav').classList.add('shadow-xl');
+            } else {
+                document.querySelector('nav').classList.remove('shadow-xl');
+            }
+        });
+
+        // Close mobile menu when clicking link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+        
+        console.log('%cWebsite Pondok Pesantren Al-Hikmah siap digunakan!', 'color: #10b981; font-size: 14px; font-weight: bold');
+    </script>
+</body>
+</html>
