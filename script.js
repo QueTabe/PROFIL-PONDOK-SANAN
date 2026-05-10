@@ -27,17 +27,17 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 console.log('%cWebsite Pondok Pesantren Al-Hikmah siap digunakan!', 'color: #10b981; font-size: 14px; font-weight: bold');
 
 // Tambahkan di bagian bawah script.js
+// Di dalam script.js
 const swiper = new Swiper(".mySwiper", {
     loop: true,
-    autoplay: {
-        delay: 5000, // Berpindah setiap 5 detik
-        disableOnInteraction: false,
-    },
+    // Bagian autoplay dihapus agar tidak jalan sendiri
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
     },
+    // Tambahkan navigasi panah jika ingin lebih mudah berpindah
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });
-
-// Tips: Berhenti slide otomatis jika user sedang memutar video
-// (Opsional: Butuh YouTube API untuk deteksi otomatis yang lebih kompleks)

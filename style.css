@@ -62,18 +62,37 @@
 }
 
 /* Menyamakan tinggi slide */
+/*
 .swiper {
     width: 100%;
     height: 100%;
 }
 
 .swiper-slide {
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Rasio 16:9 */
+    height: 0;
+}
+
+video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Kustom warna titik navigasi agar sesuai tema hijau */
 .swiper-pagination-bullet-active {
     background: #0f6b3f !important;
 }
+
