@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body class="smooth-scroll font-sans bg-gray-50 text-gray-800">
     <nav class="bg-white shadow-lg sticky top-0 z-50">
@@ -81,14 +82,37 @@
         </div>
     </header>
 
+
+    <!-- Bagian Profil Pesantren -->
+
     <section id="profil" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right">
+                <!-- <div data-aos="fade-right">
                     <img src="image/tugu-apis.JPG" 
                          alt="Pondok Pesantren Apis Sanan Gondang" 
                          class="rounded-3xl shadow-2xl w-full">
+                </div>  -->
+                <div data-aos="fade-right" class="relative overflow-hidden rounded-3xl shadow-2xl">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="image/tugu-apis.JPG" alt="Pondok Pesantren" class="w-full h-[400px] object-cover">
+            </div>
+            <div class="swiper-slide">
+                <div class="relative w-full h-[400px]">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=h0BXfxALr7A&t=122s" 
+                        class="absolute top-0 left-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
                 <div data-aos="fade-left">
                     <span class="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">Berdiri sejak 1932</span>
                     <p></p>
@@ -383,6 +407,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

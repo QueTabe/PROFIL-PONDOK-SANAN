@@ -60,3 +60,20 @@
     scroll-behavior: smooth;
     scroll-padding-top: 70px;
 }
+
+/* Menyamakan tinggi slide */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kustom warna titik navigasi agar sesuai tema hijau */
+.swiper-pagination-bullet-active {
+    background: #0f6b3f !important;
+}
