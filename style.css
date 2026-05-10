@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --hijau: #0f6b3f;
+    --tosca: #40c9b8;
+}
+
+.hero-bg {
+    background-image: linear-gradient(rgba(15, 107, 63, 0.75), rgba(15, 107, 63, 0.75)), url('image/bangunan.JPG');
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #40c9b8;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(to right, #0f6b3f, #40c9b8);
+    bottom: -8px;
+    left: 20%;
+    border-radius: 9999px;
+}
+
+.smooth-scroll {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}

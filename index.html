@@ -7,77 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        
-        :root {
-            --hijau: #0f6b3f;
-            --tosca: #40c9b8;
-        }
-        
-        .hero-bg {
-            background-image: linear-gradient(rgba(15, 107, 63, 0.75), rgba(15, 107, 63, 0.75)), url('image/bangunan.JPG');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #40c9b8;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-        }
-        
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 60%;
-            height: 4px;
-            background: linear-gradient(to right, #0f6b3f, #40c9b8);
-            bottom: -8px;
-            left: 20%;
-            border-radius: 9999px;
-        }
-        
-        .smooth-scroll {
-            scroll-behavior: smooth;
-            scroll-padding-top: 70px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="smooth-scroll font-sans bg-gray-50 text-gray-800">
-    <!-- Navbar -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <!-- Logo -->
                 <div class="flex items-center gap-3">
                     <div class="w-12 h-12 object-cover rounded-2xl flex items-center justify-center text-white text-3xl shadow-inner">
                         <img src="image/1.png" alt="Logo Pondok" class="w-full h-full object-contain">
@@ -88,7 +23,6 @@
                     </div>
                 </div>
 
-                <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                     <a href="#profil" class="nav-link text-gray-700 hover:text-emerald-700">Profil</a>
                     <a href="#unit" class="nav-link text-gray-700 hover:text-emerald-700">Unit Pendidikan</a>
@@ -105,7 +39,6 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t py-4">
             <div class="flex flex-col px-6 gap-4 text-lg">
                 <a href="#profil" onclick="toggleMobileMenu()" class="py-2">Profil Pesantren</a>
@@ -118,7 +51,6 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <header class="hero-bg h-screen flex items-center text-white relative">
         <div class="max-w-7xl mx-auto px-6 text-center z-10">
             <div data-aos="fade-up" class="max-w-3xl mx-auto">
@@ -143,14 +75,12 @@
             </div>
         </div>
         
-        <!-- Scroll indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
             <p class="text-sm mb-2 opacity-75">Scroll untuk melihat lebih banyak</p>
             <i class="fa-solid fa-chevron-down animate-bounce text-3xl"></i>
         </div>
     </header>
 
-    <!-- Profil -->
     <section id="profil" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -188,7 +118,6 @@
         </div>
     </section>
 
-    <!-- Unit Pendidikan -->
     <section id="unit" class="py-24 bg-emerald-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -222,7 +151,6 @@
         </div>
     </section>
 
-    <!-- Jenjang Pendidikan -->
     <section id="jenjang" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -248,7 +176,6 @@
         </div>
     </section>
 
-    <!-- Program Unggulan -->
     <section id="program" class="py-24 bg-emerald-800 text-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -280,7 +207,6 @@
         </div>
     </section>
 
-    <!-- Syarat Pendaftaran -->
     <section id="daftar" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-2xl mx-auto">
@@ -329,15 +255,15 @@
                         </div>
                     </div>
                 </div>
-                <button onclick="alert('Form pendaftaran akan segera dibuka. Hubungi admin untuk info lebih lanjut!')" 
-                        class="mt-12 w-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white py-6 rounded-3xl text-xl font-semibold shadow-xl hover:scale-105 transition-transform" href="#">
-                    Link Brosur PDF →
-                </button>
+                <a href="https://drive.google.com/drive/folders/1-r9nnQyBjFQYLgBKHxcPzdw5qpwApMcs?usp=sharing" 
+                        target="_blank"
+                        class="mt-12 w-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white py-6 rounded-3xl text-xl font-semibold shadow-xl hover:scale-105 transition-transform flex items-center justify-center">
+                        Link Brosur PDF →
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Materi Ujian -->
     <section class="py-24 bg-emerald-50">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12">Materi Ujian Masuk</h2>
@@ -396,7 +322,6 @@
         </div>
     </section>
 
-    <!-- Alamat & Kontak -->
     <section id="kontak" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-16">
@@ -427,7 +352,6 @@
                     </div>
                 </div>
                 
-                <!-- Google Maps Placeholder -->
                 <div class="bg-gray-200 rounded-3xl h-96 flex items-center justify-center relative overflow-hidden">
                     <a 
                     href="https://maps.google.com/?q=Pondok+Pesantren+APIS+Sanan+Gondang"
@@ -442,7 +366,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-emerald-900 text-emerald-100 py-16">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex justify-center mb-8">
@@ -454,40 +377,12 @@
             <p class="opacity-75">Gondang - Gandusari - Blitar</p>
             
             <div class="mt-12 pt-8 border-t border-white/20 text-sm opacity-70">
-                &copy; 2026 Pondok Pesantren APIS Sanan Gondang. All rights reserved.
+                © 2026 Pondok Pesantren APIS Sanan Gondang. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                document.querySelector('nav').classList.add('shadow-xl');
-            } else {
-                document.querySelector('nav').classList.remove('shadow-xl');
-            }
-        });
-
-        // Close mobile menu when clicking link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
-        });
-        
-        console.log('%cWebsite Pondok Pesantren Al-Hikmah siap digunakan!', 'color: #10b981; font-size: 14px; font-weight: bold');
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
