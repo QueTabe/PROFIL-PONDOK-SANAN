@@ -94,7 +94,7 @@
 
     <section id="profil" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
                 <!-- <div data-aos="fade-right">
                     <img src="image/tugu-apis.JPG" 
                          alt="Pondok Pesantren Apis Sanan Gondang" 
@@ -115,29 +115,17 @@
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
-                <div data-aos="fade-left">
-                    <span class="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">Berdiri sejak 1932</span>
+                <div data-aos="fade-left" class="pt-2 flex flex-col h-full" id="container-deskripsi">
+                    <span class="inline-block w-fit px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">Berdiri sejak 1932</span>
                     <p></p>
-                    <h2 class="text-5xl font-bold text-emerald-800 mb-6 section-title">Profil Pesantren</h2>
-                    <p class="text-lg leading-relaxed text-gray-600 mb-8">
-                        Pondok Pesantren <b>"APIS SANAN GONDANG"</b> adalah lembaga pendidikan Islam berbasis salaf yang didirikan oleh Maha Guru <b>Muhammad Djamhuri</b>, yang terkenal dengan nama <b>KH. SHODIQ DAMANHURI</b> atau juga KYAI SANAN, 
-                        Pada tahun 1932M Hadrotus Syaikh mendirikan Pesantren di Desa Gondang Kec. Gandusari Kab. Blitar yang terletak 18 km dari kota Blitar. Setelah beberapa tahun, perkembangan pesantren APIS Sanan Gondang menjadi sangat pesat. Para santri dari berbagai penjuru daerah telai mulai berdatangan untuk menimba ilmu. Sistem pengajaran yang sebelumnya hanya berbentuk bandongan atau weton dengan sejumlah kitab
-                        kuning, untuk tahap selanjutnya telah mulai menerapkan sistem madrasah. 
-                        Selanjutnya pesantren APIS Sanan Gondang terus mengadakan perbaikan dalam hal sistem pendidikan guna menggali warisan keilmuan dari para ulama salaf.
+                    <h2 class="text-3xl font-bold text-emerald-800 mt-0 mb-4">Profil Pesantren</h2>
+                    <p id="text-deskripsi" class="text-lg leading-relaxed text-gray-600 transition-all duration-300">
+                        Pondok Pesantren "APIS SANAN GONDANG" adalah lembaga pendidikan Islam berbasis salaf yang didirikan oleh Maha Guru Muhammad Djamhuri, yang terkenal dengan nama KH. SHODIQ DAMANHURI atau juga KYAI SANAN, Pada tahun 1932M Hadrotus Syaikh mendirikan Pesantren di Desa Gondang Kec. Gandusari Kab. Blitar yang terletak 18 km dari kota Blitar. Setelah beberapa tahun, perkembangan pesantren APIS Sanan Gondang menjadi sangat pesat. Para santri dari berbagai penjuru daerah telai mulai berdatangan untuk menimba ilmu. Sistem pengajaran yang sebelumnya hanya berbentuk bandongan atau weton dengan sejumlah kitab kuning, untuk tahap selanjutnya telah mulai menerapkan sistem madrasah. Selanjutnya pesantren APIS Sanan Gondang terus mengadakan perbaikan dalam hal sistem pendidikan guna menggali warisan keilmuan dari para ulama salaf.
                     </p>
-                    <div class="grid grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="text-4xl font-bold text-emerald-700">1000+</div>
-                            <div class="text-sm text-gray-500">Santri Salaf + Cabang</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-4xl font-bold text-emerald-700">40+</div>
-                            <div class="text-sm text-gray-500">Pengajar</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-4xl font-bold text-emerald-700">90+</div>
-                            <div class="text-sm text-gray-500">Tahun</div>
-                        </div>
+    
+                    <button id="btn-read-more" class="text-emerald-600  font-semibold mt-2 hidden hover:underline w-fit">
+                        Baca Selengkapnya
+                    </button>
                     </div>
                 </div>
             </div>
@@ -246,6 +234,9 @@
         </div>
     </section>
 
+
+    <!-- Bagian Syarat Pendaftaran -->
+
     <section id="daftar" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-2xl mx-auto">
@@ -309,6 +300,9 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Bagian Materi Ujian Masuk --> 
 
     <section class="py-24 bg-emerald-50">
         <div class="max-w-7xl mx-auto px-6">
